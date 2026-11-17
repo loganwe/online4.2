@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meet the Whisker Watchers</title>
+<style>
+  /* ===== Global styles ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #fdf6ec;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  /* POSITION PROPERTY #1:
+     The header is position: relative, which lets us absolutely
+     position the "Est. 2020" badge inside it (see .badge below). */
+  header {
+    position: relative;
+    background-color: #6d4aff;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px 30px;
+  }
+
+  header h1 {
+    font-size: 2.4em;
+  }
+
+  header p {
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  /* POSITION PROPERTY #2:
+     position: absolute pins this badge to the top-right corner
+     of the header (its nearest positioned ancestor). */
+  .badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #ffb347;
+    color: #4a3200;
+    font-family: Verdana, sans-serif;
+    font-size: 0.75em;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 12px;
+  }
+
+  /* POSITION PROPERTY #3:
+     position: sticky keeps the navigation bar pinned to the top
+     of the screen as the visitor scrolls down the page. */
+  nav {
+    position: sticky;
+    top: 0;
+    background-color: #4a3200;
+    z-index: 10;
+  }
+
+  nav ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  nav li {
+    display: inline-block;
+    margin: 0 14px;
+  }
+
+  nav a {
+    color: #fdf6ec;
+    text-decoration: none;
+    font-family: Verdana, sans-serif;
+    font-size: 0.95em;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+    color: #ffb347;
+  }
+
+  main {
+    width: 85%;
+    max-width: 900px;
+    margin: 30px auto;
+  }
+
+  h2 {
+    color: #6d4aff;
+    border-bottom: 3px dotted #6d4aff;
+    padding-bottom: 6px;
+    margin: 30px 0 20px;
+    clear: both; /* headings start below any floated images */
+  }
+
+  /* FLOAT PROPERTY:
+     Each bio image floats left or right so the biography text
+     wraps around the picture. We alternate the sides for a
+     zig-zag layout. */
+  .member img {
+    float: left;
+    margin: 0 20px 10px 0;
+    border: 4px solid #6d4aff;
+    border-radius: 12px;
+  }
+
+  .member.right img {
+    float: right;
+    margin: 0 0 10px 20px;
+  }
+
+  .member {
+    overflow: auto; /* clears the float so boxes stack neatly */
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .member h3 {
+    color: #4a3200;
+  }
+
+  .role {
+    font-family: Verdana, sans-serif;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffb347;
+  }
+
+  /* Clear the floats before the footer so it sits below everything */
+  footer {
+    clear: both;
+    background-color: #4a3200;
+    color: #fdf6ec;
+    text-align: center;
+    padding: 18px;
+    font-family: Verdana, sans-serif;
+    font-size: 0.85em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🐾 The Whisker Watchers 🐾</h1>
+  <p>Neighborhood patrol squad — naps, snacks, and safety since 2020</p>
+  <!-- POSITION (absolute) example -->
+  <span class="badge">Est. 2020</span>
+</header>
+
+<!-- Navigation section: links to other pages of the team site -->
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Our Missions</a></li>
+    <li><a href="#">Adopt a Watcher</a></li>
+    <li><a href="#">Treat Donations</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h2>Meet the Team</h2>
+
+  <!-- Member 1: image floats LEFT -->
+  <article class="member">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23ffe9c7'/%3E%3Ccircle cx='100' cy='115' r='60' fill='%23e8923a'/%3E%3Cpolygon points='50,70 65,25 90,65' fill='%23e8923a'/%3E%3Cpolygon points='110,65 135,25 150,70' fill='%23e8923a'/%3E%3Cpolygon points='58,62 68,35 82,60' fill='%23ffd9b0'/%3E%3Cpolygon points='118,60 132,35 142,62' fill='%23ffd9b0'/%3E%3Cellipse cx='78' cy='105' rx='11' ry='15' fill='%23ffffff'/%3E%3Cellipse cx='122' cy='105' rx='11' ry='15' fill='%23ffffff'/%3E%3Ccircle cx='80' cy='108' r='5' fill='%23332000'/%3E%3Ccircle cx='120' cy='108' r='5' fill='%23332000'/%3E%3Cpolygon points='96,122 104,122 100,130' fill='%23c4581f'/%3E%3Cpath d='M92 134 q8 6 16 0' stroke='%23332000' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Portrait of Sir Barksalot, golden dog" width="200" height="200">
+    <h3>Sir Barksalot</h3>
+    <span class="role">Captain &amp; Front Door Alarm</span>
+    <p>Sir Barksalot founded the Whisker Watchers after single-handedly detecting three mail carriers in a single afternoon. He leads morning patrols from the living-room windowsill and believes every squirrel is a matter of national security. Off duty, he enjoys belly rubs and stealing socks.</p>
+  </article>
+
+  <!-- Member 2: image floats RIGHT (note the class="member right") -->
+  <article class="member right">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e5e0ff'/%3E%3Ccircle cx='100' cy='115' r='60' fill='%236d4aff'/%3E%3Cpolygon points='50,70 65,25 90,65' fill='%236d4aff'/%3E%3Cpolygon points='110,65 135,25 150,70' fill='%236d4aff'/%3E%3Cpolygon points='58,62 68,35 82,60' fill='%23c9baff'/%3E%3Cpolygon points='118,60 132,35 142,62' fill='%23c9baff'/%3E%3Cellipse cx='78' cy='105' rx='11' ry='15' fill='%23ffffff'/%3E%3Cellipse cx='122' cy='105' rx='11' ry='15' fill='%23ffffff'/%3E%3Crect x='76' y='102' width='8' height='12' rx='4' fill='%23332000'/%3E%3Crect x='116' y='102' width='8' height='12' rx='4' fill='%23332000'/%3E%3Cpolygon points='96,122 104,122 100,129' fill='%23ffb347'/%3E%3Cpath d='M93 133 l4 4 4-4 4 4 4-4' stroke='%23fdf6ec' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Portrait of Countess Fluffington, purple cat" width="200" height="200">
+    <h3>Countess Fluffington</h3>
+    <span class="role">Chief Intelligence Officer</span>
+    <p>The Countess gathers intel from the highest perch in the house — the top of the refrigerator. She communicates exclusively in slow blinks and 3 a.m. sprints down the hallway. Her greatest achievement was coordinating a three-cat ambush on a rogue dust bunny.</p>
+  </article>
+
+  <!-- Member 3: image floats LEFT -->
+  <article class="member">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23dff2df'/%3E%3Cellipse cx='100' cy='125' rx='55' ry='48' fill='%239aa0a6'/%3E%3Cellipse cx='78' cy='112' rx='11' ry='13' fill='%23ffffff'/%3E%3Cellipse cx='122' cy='112' rx='11' ry='13' fill='%23ffffff'/%3E%3Ccircle cx='79' cy='115' r='5' fill='%23332000'/%3E%3Ccircle cx='121' cy='115' r='5' fill='%23332000'/%3E%3Cpolygon points='93,127 107,127 100,138' fill='%23ffb347'/%3E%3Ccircle cx='100' cy='96' r='14' fill='%23d1d5da'/%3E%3Ccircle cx='100' cy='88' r='5' fill='%23616161'/%3E%3Cpath d='M92 88 h16' stroke='%23616161' stroke-width='3'/%3E%3Ccircle cx='85' cy='80' r='8' fill='%23d1d5da'/%3E%3Ccircle cx='115' cy='80' r='8' fill='%23d1d5da'/%3E%3C/svg%3E" alt="Portrait of Hootie McBirdface, gray owl" width="200" height="200">
+    <h3>Hootie McBirdface</h3>
+    <span class="role">Night Shift Supervisor</span>
+    <p>While the rest of the team sleeps, Hootie runs the overnight watch from the oak tree on Elm Street. He can rotate his head 270 degrees, which comes in handy for keeping an eye on the suspicious raccoon family. He is never seen before noon and refuses to explain why.</p>
+  </article>
+
+  <!-- Member 4: image floats RIGHT -->
+  <article class="member right">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23fff0f3'/%3E%3Cellipse cx='100' cy='125' rx='55' ry='48' fill='%23e8919e'/%3E%3Cellipse cx='80' cy='110' rx='12' ry='14' fill='%23ffffff'/%3E%3Cellipse cx='120' cy='110' rx='12' ry='14' fill='%23ffffff'/%3E%3Ccircle cx='83' cy='113' r='5' fill='%23332000'/%3E%3Ccircle cx='117' cy='113' r='5' fill='%23332000'/%3E%3Cellipse cx='100' cy='140' rx='10' ry='7' fill='%23ffc2cc'/%3E%3Cpolygon points='94,128 106,128 100,136' fill='%23c4581f'/%3E%3Cpath d='M96 146 q4 3 8 0' stroke='%23332000' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Portrait of Nugget, pink pig" width="200" height="200">
+    <h3>Nugget</h3>
+    <span class="role">Morale Officer &amp; Snack Coordinator</span>
+    <p>Nugget joined the team after wandering in from the county fair and never leaving. Though she mostly naps through briefings, her enthusiasm during snack distribution is unmatched. She reminds everyone daily that morale is important, especially if morale involves apples.</p>
+  </article>
+
+  <!-- Member 5: image floats LEFT -->
+  <article class="member">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e0f4ff'/%3E%3Cpath d='M100 175 v-70' stroke='%235a7d3a' stroke-width='10' stroke-linecap='round'/%3E%3Ccircle cx='100' cy='70' r='38' fill='%236fa84c'/%3E%3Ccircle cx='72' cy='88' r='20' fill='%238fc46b'/%3E%3Ccircle cx='128' cy='88' r='20' fill='%238fc46b'/%3E%3Cellipse cx='87' cy='66' rx='9' ry='13' fill='%23ffffff'/%3E%3Cellipse cx='113' cy='66' rx='9' ry='13' fill='%23ffffff'/%3E%3Ccircle cx='89' cy='69' r='4' fill='%23332000'/%3E%3Ccircle cx='111' cy='69' r='4' fill='%23332000'/%3E%3Cpath d='M92 80 q8 6 16 0' stroke='%23332000' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="Portrait of Captain Photosynthesis, smiling houseplant" width="200" height="200">
+    <h3>Captain Photosynthesis</h3>
+    <span class="role">Sunlight Specialist</span>
+    <p>Captain Photosynthesis handles all of the team's renewable energy needs and provides calm leadership from the sunny south window. He speaks softly, grows steadily, and has never once panicked. His one weakness: weekends when everyone forgets to water him.</p>
+  </article>
+
+  <h2>Join the Squad!</h2>
+  <p>Think your pet (or plant!) has what it takes? Visit our <a href="#">Adopt a Watcher</a> page to learn more, or drop a treat off at headquarters. Serious inquiries only — Nugget screens all applicants personally.</p>
+</main>
+
+<footer>
+  <p>&copy; 2026 The Whisker Watchers &bull; Headquarters: the big couch &bull; Patrols daily</p>
+</footer>
+
+</body>
+</html>
